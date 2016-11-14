@@ -157,6 +157,7 @@ try{
 	var users = null;																			//users are only found if security is on
 	if(manual.credentials.users) users = manual.credentials.users;
 	console.log('loading hardcoded users');
+	console.log(users);
 }
 catch(e){
 	console.log('Error - could not find hardcoded peers/users, this is okay if running in bluemix');
@@ -197,7 +198,7 @@ var options = 	{
 						users: users,																		//dump the whole thing, sdk will parse for a good one
 						options: {
 									quiet: true, 															//detailed debug messages on/off true/false
-									tls: true, 																//should app to peer communication use tls?
+									tls: false, 																//should app to peer communication use tls?
 									maxRetry: 1																//how many times should we retry register before giving up
 								}
 					},
